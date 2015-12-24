@@ -8,7 +8,15 @@
 
 <AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml" fx:controller="com.tamas.fulop.simplepictureresizer.FXMLController">
     <children>
-        <Button layoutX="126" layoutY="90" text="Kep kivalasztas!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
+        <Button layoutX="100" layoutY="90"
+                alignment="BASELINE_CENTER" 
+                text="Kep kivalasztas!"
+                onAction="#handleButtonAction" 
+                fx:id="button" />
+        
+        <Label layoutX="85" layoutY="150" 
+               alignment="BASELINE_CENTER" 
+               minHeight="16" minWidth="69" 
+               fx:id="label" />
     </children>
 </AnchorPane>

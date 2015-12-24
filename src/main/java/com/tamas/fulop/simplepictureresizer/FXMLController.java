@@ -26,11 +26,10 @@ public class FXMLController implements Initializable {
     
     @FXML
     private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
         
-        resizeImages(selectFiles());
+        Integer resized =  resizeImages(selectFiles());
         
-        label.setText("Kesz!");
+        label.setText("Átméretezve: " + resized + " darab kép.");
         
     }
     
@@ -64,8 +63,9 @@ public class FXMLController implements Initializable {
      * 
      * @param images 
      */
-    private void resizeImages(List<File> images){
+    private Integer resizeImages(List<File> images){
         
+        Integer i = 0;
         
         for(File originalImage : images){
                    
@@ -78,12 +78,15 @@ public class FXMLController implements Initializable {
                 Thumbnails.of(originalImage)
                         .size(1024, 768)
                         .toFile(resizedImage);
+                i++;
             } catch (IOException ex) {
                 Logger.getLogger(FXMLController.class.getName()).log(Level.SEVERE, "File can not be saved.", ex);
             }
         
         
         }
+        
+        return i;
          
     }
     
